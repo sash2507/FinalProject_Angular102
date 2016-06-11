@@ -1,0 +1,75 @@
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Mrs+Sheppards' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
+</head>
+<style>
+
+img {
+  width:50%;
+  float:left;
+}
+
+p {
+  float:left;
+  width:50%;
+  padding:100px;
+}
+
+.woman {
+  float:right;
+  width:40%;
+}
+
+.clear {
+  clear:both;
+}
+
+.woman-info {
+  float:left;
+  width:50%;
+  padding:100px;
+}
+
+.woman2 {
+  width:50%;
+  float:left;
+}
+
+.woman2-info {
+  width:50%;
+  float:right;
+}
+
+</style>
+
+<div hd-directive></div>
+
+<img style="width:100%" ng-src="app/images/fashion.png">
+
+<h1 style="text-align:center; font-size:60px; background-color:white; font-family: 'Mrs Sheppards', cursive; "> TRENDING </h1>
+
+<div>
+  <img ng-src="app/images/men.png">
+    <p style="font-family: 'Tangerine', cursive; font-size:30px">The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
+</div>
+
+<div class="clear"></div>
+
+<div>
+
+   <p ng-class="woman-info" style="font-family: 'Tangerine', cursive; font-size:30px;">The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
+  <img ng-class="woman" ng-src="app/images/women.png">
+</div>
+
+<div class="clear"></div>
+
+<div>
+
+  <img ng-class="woman2" ng-src="app/images/woman2.jpg">
+    <p ng-class="woman2-info" style="font-family: 'Tangerine', cursive; font-size:30px">The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers.</p>
+
+</div>
+
+<div class="clear"></div>
+
+<div ft-directive></div>

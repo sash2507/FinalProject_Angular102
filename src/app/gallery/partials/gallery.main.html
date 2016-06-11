@@ -1,0 +1,77 @@
+<style>
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+* {
+	box-sizing: border-box;
+}
+
+form {
+	text-align: justify;
+}
+
+h2, h3, .select-feed {
+	font-family: 'Raleway', sans-serif;
+}
+
+h2 {
+	margin-left: 5px;
+}
+
+.select-feed {
+	height: 60px;
+	width: 400px;
+	border-radius: 20px;
+	border: 2px solid black;
+	color: #F20056;
+	font-size: 1.3em;
+	font-weight: bolder;
+	display:inline;
+}
+
+.feed-link {
+	color: pink;
+	font-size: 1em;
+	margin-left: 5px;
+}
+
+.display-feed-items {
+	font-family: 'Raleway', sans-serif;
+	background-color: #E5E7E1;
+	width: 400px;
+	padding: 10px;
+	margin-bottom: 10px;
+	font-size: 0.3em;
+}
+
+.display-feed-items a {
+	font-size:.75em;
+}
+
+
+</style>
+
+
+<div style="width:50%; float: left; display: inline-block; padding: 30px;">
+<center><div gallery-directive></div></center>
+</div>
+
+<div style="width: 50%; float: right; display: inline-block; margin-top: 100px;">
+<div ng-controller="rssFeedCtrl as ctrl">
+   <form>
+     <h2>Select an rss feed</h2>
+     <select ng-model="ctrl.selectedFeed" ng-options="response as response.feed.title for response in ctrl.responses" class="select-feed">
+     <option value=""></option>
+ 	 </select>
+ 	 <div class="website-links">
+ 	 	<h5><a href="{{ctrl.selectedFeed.feed.link}}" target="blank" class="feed-link">{{ctrl.selectedFeed.feed.link}}</a></h5>      
+ 	 	<div class="display-feed-items" ng-repeat="item in ctrl.selectedFeed.items">
+       	<h5>{{item.title}}<br><a href="{{item.link}}" target="blank">{{item.link}}</a></h5>   
+     	</div>
+     </div>
+ </form>
+ </div>
+</div>
+
+<div style="clear: both; margin-top: 30px;"></div>
+ <div ft-directive></div>
+

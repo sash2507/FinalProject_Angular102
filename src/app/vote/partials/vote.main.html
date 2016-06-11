@@ -1,0 +1,44 @@
+<style>
+.vote-image {
+  width:400px;
+  margin-left:100px;
+}
+
+.info-container {
+  float:right;
+  position:relative;
+  bottom:100px;
+  left:300px;
+}
+
+.header {
+  text-align:center;
+  position:relative;
+  right:100px;
+}
+
+.clear {
+  clear:both;
+}
+</style>
+
+<div hd-directive></div>
+
+	<!-- <div ng-if="!ctrl.displayTodos"> -->
+      <div class="col-xs-6">
+        <h1 class="header">Vote for a Look</h1>
+        <div ng-repeat="superhero in ctrl.superheros">
+          <img class="vote-image" ng-src="{{superhero.profileImage}}"><br>
+          <div class="info-container">
+            <button ng-click="ctrl.voteUp(superhero)"><i class="fa fa-thumbs-up fa-2x"></i>&nbsp{{superhero.upvote}}</button>
+            <button ng-click="ctrl.voteDown(superhero)"><i class="fa fa-thumbs-down fa-2x"></i>&nbsp{{superhero.downvote}}</button><br>
+            <label>Store: </label><span ng-bind="superhero.store"></span><br>
+            <label>Price: </label><span ng-bind="superhero.price"></span><br>
+          </div>
+        </div>
+      </div>
+  <!-- </div> -->
+
+    <div class="clear"></div>
+
+<div ft-directive></div>
