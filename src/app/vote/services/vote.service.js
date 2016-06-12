@@ -17,18 +17,38 @@ angular.module('MyApp.Vote')
 			}
 		})
 	}
+
+	self.upVotes = function(photo, onCompletion) {
+		ListRequestService.updatePhoto(photo, function (isValid, response) {
+			if(isValid) {
+				self.photosUpVote = response.data;
+				onCompletion(true, self.photosVote);
+			} else {
+
+			}
+		})
+	}
 })
 
-.service('ListRequestService', function(SuperheroListResource) {
+.service('ListRequestService', function(PhotoListResource, VoteUpdateResource) {
 	var self = this;
 
 	self.getPhotoList = function(onCompletion) {
-		SuperheroListResource.get().$promise
+		PhotoListResource.get().$promise
 		.then(function(response) {
 			onCompletion(true, response);
 		}, function(error) {
 			onCompletion(false, error);
 		})
+	}
+
+	self.updatePhoto = function(photo, onCompletion) {
+		VoteUpdateResource.update(photo)
+		.then(function(response) {
+			onCompletion(true, response);
+		}, function(error) {
+			onCompletion(false, error);
+		}) 
 	}
 })
 

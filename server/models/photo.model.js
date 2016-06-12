@@ -9,7 +9,7 @@ var mongoose = require('mongoose'),
 /**
  * User Schema
  */
-var SuperheroSchema = new Schema({
+var PhotoSchema = new Schema({
   name: {
     type: String,
     trim: true,
@@ -39,4 +39,4 @@ var SuperheroSchema = new Schema({
 
 });
 
-mongoose.model('Superhero', SuperheroSchema);
+mongoose.model('Photo', PhotoSchema);

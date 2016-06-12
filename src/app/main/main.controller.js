@@ -10,24 +10,24 @@ angular.module('template')
   };
 })
 
-.controller('SuperheroController', function(SuperheroListResource, SuperheroAddResource) { 
+.controller('PhotoController', function(PhotoListResource, PhotoAddResource) { 
   var self = this;
   (function getList() {
-    SuperheroListResource.get().$promise
+    PhotoListResource.get().$promise
     .then(function(response) {
-      self.superheros = response.data;
+      self.photos = response.data;
       console.log(response);
     });
 
   })();
 
  
-  self.addSuperhero = function(superhero) { 
-    SuperheroAddResource.add(superhero)
+  self.addPhoto = function(photo) { 
+    PhotoAddResource.add(photo)
     .then(function(response) {
-      self.superhero.profileImage = response.data.profileImage;
-      self.superheros.push(superhero);
-      self.superhero = {};
+      self.photo.profileImage = response.data.profileImage;
+      self.photos.push(photo);
+      self.photo = {};
     });
   };
 })

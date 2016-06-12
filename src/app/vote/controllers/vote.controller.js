@@ -10,18 +10,16 @@ angular.module('MyApp.Vote')
 
     self.listPhotoList = ListDataService.allPhotosList(function(isValid, response) {
         if (isValid) {
-            self.superheros = response;
+            self.photos = response;
         }
     })
 
-    // self.currentUpCount = 1;
-    self.voteUp = function(superhero) {
-        superhero.upvote = superhero.upvote + 1;
+    self.voteUp = function(photo) {
+        photo.upvote = photo.upvote + 1;
     }
 
-    // self.currentDownCount = 1;
-    self.voteDown = function(superhero) {
-        superhero.downvote = superhero.downvote + 1;
+    self.voteDown = function(photo) {
+        photo.downvote = photo.downvote + 1;
     }
 
     });
