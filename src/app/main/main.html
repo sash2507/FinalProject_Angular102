@@ -41,10 +41,10 @@
   </div>
   <div class="row">
     <!-- Display Super Heros -->
-    <div ng-if="!ctrl.displayTodos" ng-controller="PhotoController as shCtrl">
+    <div ng-if="!ctrl.displayTodos" ng-controller="PhotoController as pCtrl">
       <div class="col-xs-6">
         <h1 class="image-show">Photos List</h1>
-        <div class="image-show" ng-repeat="photo in shCtrl.photos">
+        <div class="image-show" ng-repeat="photo in pCtrl.photos">
           <img class="picture"ng-src="{{photo.profileImage}}"><br>
           <label>Name: </label><span ng-bind="photo.name"></span><br>
           <label>Store: </label><span ng-bind="photo.store"></span><br>
@@ -54,16 +54,16 @@
         <div class="col-xs-6 add-photo-container">
           <div class="inputs">
             <h3>Add Photo</h3><br>
-            <label>Name: </label><input type="text" ng-model="shCtrl.photo.name"></input><br>
-            <label>Store: </label><input type="text" ng-model="shCtrl.photo.store"></input><br>
-            <label>Price: </label><input type="text" ng-model="shCtrl.photo.price"></input><br>
+            <label>Name: </label><input type="text" ng-model="pCtrl.photo.name"></input><br>
+            <label>Store: </label><input type="text" ng-model="pCtrl.photo.store"></input><br>
+            <label>Price: </label><input type="text" ng-model="pCtrl.photo.price"></input><br>
           </div>
           <div>
             <!-- useing ngf-select from the ng-file-upload library -->
-            <input type="file" ngf-select ng-model="shCtrl.photo.file">
+            <input type="file" ngf-select ng-model="pCtrl.photo.file">
           </div>
           <div>
-            <button class="btn btn-primary" ng-click="shCtrl.addPhoto(shCtrl.photo)">Add</button>
+            <button class="btn btn-primary" ng-click="pCtrl.addPhoto(pCtrl.photo)">Add</button>
           </div>
         </div>
       </div>

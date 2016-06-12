@@ -31,7 +31,7 @@
       url: '/ gallery',
       templateUrl: 'app/gallery/partials/gallery.main.html',
       controller: 'GalleryController as ctrl'
-    })  
+    })
 
 
     $urlRouterProvider.otherwise('/');
