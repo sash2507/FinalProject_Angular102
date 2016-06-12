@@ -5,16 +5,16 @@
 angular.module('MyApp.Vote')
 
 // Superhero resources
-.factory('SuperheroListResource', function($resource) {
-	return $resource('/api/getSuperheros');
+.factory('PhotoListResource', function($resource) {
+	return $resource('/api/getPhotos');
 })
 
 /* Upload service being injected is from the ng-file-upload library */
-.factory('SuperheroAddResource', function(Upload) {
+.factory('PhotoAddResource', function(Upload) {
 	return {
 		add: function(toList) {
 			return Upload.upload({
-				url: '/api/addSuperhero',
+				url: '/api/addPhoto',
 				method:'PUT',
 				data: {content: angular.toJson(toList)},
 				file: toList.file

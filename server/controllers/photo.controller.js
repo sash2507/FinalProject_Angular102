@@ -4,29 +4,29 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose');
-var SuperheroModel = mongoose.model('Superhero');
+var PhotoModel = mongoose.model('Photo');
 
-exports.getSuperheros = function(req, res) {
-  SuperheroModel.find().exec(function(err, superheros) {
+exports.getPhotos = function(req, res) {
+  PhotoModel.find().exec(function(err, photos) {
     if (err) {
       return res.status(400).send({
         message: err
       });
     } else {
       res.json({
-        data: superheros
+        data: photos
       });
     }
   });
 };
 
-exports.addSuperhero = function(req, res) {
-  var superhero = JSON.parse(req.body.content);
+exports.addPhoto = function(req, res) {
+  var photo = JSON.parse(req.body.content);
 
   // fileLocation was added to req.body by file-proecessor.utilty.js
-  superhero.profileImage = req.body.fileLocation;
+  photo.profileImage = req.body.fileLocation;
 
-  var toAdd = new SuperheroModel(superhero);
+  var toAdd = new PhotoModel(photo);
 
   // Then save the object
   toAdd.save(function(err) {
@@ -36,7 +36,7 @@ exports.addSuperhero = function(req, res) {
       });
     } else {
       res.json({_id:toAdd._id, 
-        profileImage: superhero.profileImage
+        profileImage: photo.profileImage
       });
     }
   });

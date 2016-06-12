@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 function initializeModels() {
 	// Load in Database models
 	require('../models/todo.model');
-	require('../models/superhero.model');
+	require('../models/photo.model');
 }
 
 function initializeStaticallyServedDirectories(app) {
@@ -16,7 +16,7 @@ function initializeStaticallyServedDirectories(app) {
 
 function initailizeRoutes(app) {
 	// Load in Route handlers
-	require('../routes/superhero.routes')(app);
+	require('../routes/photo.routes')(app);
 	require('../routes/todo.routes')(app);
 	require('../routes/yelp.routes')(app);
 }

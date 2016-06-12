@@ -41,29 +41,29 @@
   </div>
   <div class="row">
     <!-- Display Super Heros -->
-    <div ng-if="!ctrl.displayTodos" ng-controller="SuperheroController as shCtrl">
+    <div ng-if="!ctrl.displayTodos" ng-controller="PhotoController as shCtrl">
       <div class="col-xs-6">
         <h1 class="image-show">Photos List</h1>
-        <div class="image-show" ng-repeat="superhero in shCtrl.superheros">
-          <img class="picture"ng-src="{{superhero.profileImage}}"><br>
-          <label>Name: </label><span ng-bind="superhero.name"></span><br>
-          <label>Store: </label><span ng-bind="superhero.store"></span><br>
-          <label>Price: </label><span ng-bind="superhero.price"></span><br>
+        <div class="image-show" ng-repeat="photo in shCtrl.photos">
+          <img class="picture"ng-src="{{photo.profileImage}}"><br>
+          <label>Name: </label><span ng-bind="photo.name"></span><br>
+          <label>Store: </label><span ng-bind="photo.store"></span><br>
+          <label>Price: </label><span ng-bind="photo.price"></span><br>
         </div>
       </div>
         <div class="col-xs-6 add-photo-container">
           <div class="inputs">
             <h3>Add Photo</h3><br>
-            <label>Name: </label><input type="text" ng-model="shCtrl.superhero.name"></input><br>
-            <label>Store: </label><input type="text" ng-model="shCtrl.superhero.store"></input><br>
-            <label>Price: </label><input type="text" ng-model="shCtrl.superhero.price"></input><br>
+            <label>Name: </label><input type="text" ng-model="shCtrl.photo.name"></input><br>
+            <label>Store: </label><input type="text" ng-model="shCtrl.photo.store"></input><br>
+            <label>Price: </label><input type="text" ng-model="shCtrl.photo.price"></input><br>
           </div>
           <div>
             <!-- useing ngf-select from the ng-file-upload library -->
-            <input type="file" ngf-select ng-model="shCtrl.superhero.file">
+            <input type="file" ngf-select ng-model="shCtrl.photo.file">
           </div>
           <div>
-            <button class="btn btn-primary" ng-click="shCtrl.addSuperhero(shCtrl.superhero)">Add</button>
+            <button class="btn btn-primary" ng-click="shCtrl.addPhoto(shCtrl.photo)">Add</button>
           </div>
         </div>
       </div>

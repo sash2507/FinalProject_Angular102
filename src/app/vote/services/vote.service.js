@@ -21,7 +21,7 @@ angular.module('MyApp.Vote')
 	self.upVotes = function(photo, onCompletion) {
 		ListRequestService.updatePhoto(photo, function (isValid, response) {
 			if(isValid) {
-				self.photosVote = response.data;
+				self.photosUpVote = response.data;
 				onCompletion(true, self.photosVote);
 			} else {
 
@@ -30,11 +30,11 @@ angular.module('MyApp.Vote')
 	}
 })
 
-.service('ListRequestService', function(SuperheroListResource, VoteUpdateResource) {
+.service('ListRequestService', function(PhotoListResource, VoteUpdateResource) {
 	var self = this;
 
 	self.getPhotoList = function(onCompletion) {
-		SuperheroListResource.get().$promise
+		PhotoListResource.get().$promise
 		.then(function(response) {
 			onCompletion(true, response);
 		}, function(error) {
