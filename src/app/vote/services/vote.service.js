@@ -17,9 +17,20 @@ angular.module('MyApp.Vote')
 			}
 		})
 	}
+
+	self.upVotes = function(photo, onCompletion) {
+		ListRequestService.updatePhoto(photo, function (isValid, response) {
+			if(isValid) {
+				self.photosVote = response.data;
+				onCompletion(true, self.photosVote);
+			} else {
+
+			}
+		})
+	}
 })
 
-.service('ListRequestService', function(SuperheroListResource) {
+.service('ListRequestService', function(SuperheroListResource, VoteUpdateResource) {
 	var self = this;
 
 	self.getPhotoList = function(onCompletion) {
@@ -29,6 +40,15 @@ angular.module('MyApp.Vote')
 		}, function(error) {
 			onCompletion(false, error);
 		})
+	}
+
+	self.updatePhoto = function(photo, onCompletion) {
+		VoteUpdateResource.update(photo)
+		.then(function(response) {
+			onCompletion(true, response);
+		}, function(error) {
+			onCompletion(false, error);
+		}) 
 	}
 })
 

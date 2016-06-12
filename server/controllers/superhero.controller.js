@@ -52,14 +52,14 @@ exports.updateVote = function(req, res) {
      });
    } else {
      match.upvote = superhero.upvote;
-     match.downvote = superhero.downvote;
+     // match.downvote = photo.downvote;
      match.save(function(err) {
        if (err) {
          return res.status(400).send({
            message: err
          });
        } else {
-         res.json({_id:photo._id});
+         res.json({_id:superhero._id});
        }
      });
    }

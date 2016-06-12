@@ -14,12 +14,10 @@ angular.module('MyApp.Vote')
         }
     })
 
-    // self.currentUpCount = 1;
     self.voteUp = function(superhero) {
         superhero.upvote = superhero.upvote + 1;
     }
 
-    // self.currentDownCount = 1;
     self.voteDown = function(superhero) {
         superhero.downvote = superhero.downvote + 1;
     }
