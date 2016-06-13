@@ -22,6 +22,12 @@ angular.module('MyApp.Vote')
         photo.downvote = photo.downvote + 1;
     }
 
+    // self.saveVotes = function(vote) {
+    //     UpdateDataService.updateVotes(vote, function(isValid, response) {
+    //         self.vote = response;
+    //         });
+    // };
+    
     });
 
 })();

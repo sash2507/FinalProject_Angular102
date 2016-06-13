@@ -52,7 +52,7 @@ exports.updateVote = function(req, res) {
      });
    } else {
      match.upvote = superhero.upvote;
-     // match.downvote = photo.downvote;
+     match.downvote = photo.downvote;
      match.save(function(err) {
        if (err) {
          return res.status(400).send({

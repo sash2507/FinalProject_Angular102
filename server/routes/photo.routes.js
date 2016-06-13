@@ -1,6 +1,5 @@
 'use strict';
 
-
 module.exports = function(app) {
 	var path = require('path');
 	var fileProcessor = require(path.resolve('./server/utility/file-processor.utility'));

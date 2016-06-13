@@ -52,4 +52,47 @@ angular.module('MyApp.Vote')
 	}
 })
 
+/* Upload service being injected is from the ng-file-upload library */
+.factory('SuperheroAddResource', function() {
+	return {
+		get: function(toList) {
+			return Upload.upload({
+				url: '/api/addSuperhero',
+				method:'PUT',
+				data: {content: angular.toJson(toAdd)},
+				file: toList.file
+			});
+		}
+	};
+})
+
+// Update votes resource object/request
+
+// .factory('VoteUpdateResource', function() {
+// 	return {
+// 		update: function(toUpdate) {
+// 			return Upload.upload({
+// 				url: '/api/updateSuperheros/',
+// 				method:'POST',
+// 				data: {content: angular.toJson(toUpdate)},
+// 				file: toUpdate.file
+// 			});
+// 		}
+// 	};
+// })
+
+// // Update votes data service
+
+// .service('UpdateDataService', function() {
+//  	self.updateVotes = function(vote, onCompletion) {
+//     VoteUpdateResource.update(vote, function(isValid, response){
+//         if(isValid) {
+//             self.vote = response.data;
+//             // console.log(response.data)    
+//             onCompletion(true, self.vote);
+//             };
+//         });
+//     };
+// })
+
 })();
